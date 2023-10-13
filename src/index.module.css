@@ -1,0 +1,21 @@
+/* add css module styles here (optional) */
+
+.modal {
+  position: absolute;
+  top: 25%;
+  right: 35%;
+  text-align: center;
+  width: 30%;
+  background-color: #fff;
+  border: black solid 2px;
+  border-radius: 15px;
+}
+.modal img {
+  width: 20px;
+  position: absolute;
+  right: 0;
+}
+
+.modal img:hover {
+  cursor: pointer;
+}

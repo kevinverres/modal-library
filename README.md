@@ -7,21 +7,31 @@
 ## Install
 
 ```bash
-npm install --save modal-library-kv
+npm install modal-library-kv
 ```
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
 
-import MyComponent from 'modal-library-kv'
+import { Modal } from 'modal-library-kv'
 import 'modal-library-kv/dist/index.css'
+import { useEffect, useState } from "react";
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+export default function Component() {
+  const [openModal, setOpenModal] = useState(false)
+  useEffect(() => {
+    if (openModal) {
+      window.addEventListener('click', () => setOpenModal(false));
+      return () => window.removeEventListener('click', () => setOpenModal(false));
+    }
+  });
+  return (
+    <>
+      {openModal ? <Modal /> : null}
+    </>
+  )
 }
 ```
 
